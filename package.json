@@ -1,11 +1,11 @@
 {
-  "name": "vite-vue3-boilerplate",
+  "name": "planning-poker-v3",
   "author": {
     "name": "Rafael Takei",
     "email": "rafaelytakei@gmail.com"
   },
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
