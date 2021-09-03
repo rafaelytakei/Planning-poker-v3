@@ -2,6 +2,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
+import 'virtual:windi-base.css'
+import 'virtual:windi-components.css'
+// windicss utilities should be the last style import
+import 'virtual:windi-utilities.css'
+// windicss devtools support (dev only)
+import 'virtual:windi-devtools'
+import { createI18n } from 'vue-i18n'
+import messages from '@intlify/vite-plugin-vue-i18n/messages'
 // @ts-ignore: globEager is a Vite-only feature
 const plugins = import.meta.globEager('./plugins/*.js')
 export const app = createApp(App)
@@ -20,7 +28,6 @@ if (localStorage.getItem('piniaState')) {
   const dataFromLocalStorage = JSON.parse(
     localStorage.getItem('piniaState') || '{}'
   )
-  console.log(dataFromLocalStorage)
   for (const store of storesToPersist) {
     if (dataFromLocalStorage[store]) {
       pinia.state.value = {
@@ -44,5 +51,11 @@ watch(
 for (const plugin in plugins) {
   app.use(plugins[plugin].default)
 }
+// Locale (vue-i18n)
+const i18n = createI18n({
+  locale: 'pt-BR',
+  messages,
+})
+app.use(i18n)
 // Mounting the app
 app.mount('#app')

@@ -1,6 +1,4 @@
-<template>
-  <div>Nested Route Test</div>
-</template>
+<template></template>
 
 <script setup lang="ts"></script>
 

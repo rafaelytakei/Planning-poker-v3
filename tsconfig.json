@@ -16,7 +16,9 @@
     "types": [
       "vite/client",
       "vite-plugin-pages",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client",
+      "@intlify/vite-plugin-vue-i18n/client",
+      "node"
     ],
     "paths": {
       "~/*": ["src/*"]

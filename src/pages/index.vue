@@ -1,25 +1,12 @@
 <template>
-  <router-link to="/test">Change route</router-link>
-  <div>Test index Page</div>
-  <hello-world />
-  <div>
-    Authentication Status: {{ authStore.isLoggedIn ? '' : 'Not' }} Logged In
+  <div class="flex flex-col items-center p-4">
+    <logo class="w-2/3" />
+    {{ t('home.login') }}
   </div>
-  <div>
-    <button class="mr" @click="authStore.login">Login</button>
-    <button @click="authStore.logout">Logout</button>
-  </div>
-  <div v-if="authStore.loading">Realizando login...</div>
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from '~/stores/auth'
-
-const authStore = useAuthStore()
+const { t } = useI18n()
 </script>
 
-<style scoped>
-.mr {
-  margin-right: 1rem;
-}
-</style>
+<style scoped></style>
