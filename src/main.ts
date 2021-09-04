@@ -2,20 +2,20 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
+import { createI18n } from 'vue-i18n'
+import messages from '@intlify/vite-plugin-vue-i18n/messages'
+
+// windicss layers
 import 'virtual:windi-base.css'
 import 'virtual:windi-components.css'
 // windicss utilities should be the last style import
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
-import { createI18n } from 'vue-i18n'
-import messages from '@intlify/vite-plugin-vue-i18n/messages'
+
 // @ts-ignore: globEager is a Vite-only feature
 const plugins = import.meta.globEager('./plugins/*.js')
 export const app = createApp(App)
-
-// Router setup (vue-router)
-app.use(router)
 
 // Store setup (pinia)
 const pinia = createPinia()
@@ -57,5 +57,9 @@ const i18n = createI18n({
   messages,
 })
 app.use(i18n)
+
+// Router setup (vue-router)
+app.use(router)
+
 // Mounting the app
 app.mount('#app')

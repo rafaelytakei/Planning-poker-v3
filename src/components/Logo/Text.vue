@@ -2,7 +2,7 @@
   <div class="flex items-center">
     <svg
       ref="planningSvg"
-      class="mr-4"
+      class="mr-2 lg:mr-4"
       width="323.4"
       height="100"
       viewBox="0 0 323.4 100"
@@ -63,6 +63,7 @@
     <svg
       ref="pokerSvg"
       width="197.4"
+      class="mb-1 md:mb-3 lg:mb-5"
       height="80.7"
       viewBox="0 0 197.4 80.7"
       xmlns="http://www.w3.org/2000/svg"

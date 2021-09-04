@@ -9,3 +9,7 @@ declare module '*.vue' {
   const component: ReturnType<ComponentOptions>
   export default component
 }
+
+declare module 'virtual:generated-layouts' {
+  export function setupLayouts(routes: RouteRecordRaw[]): RouteRecordRaw[]
+}

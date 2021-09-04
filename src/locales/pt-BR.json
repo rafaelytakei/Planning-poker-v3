@@ -1,5 +1,9 @@
 {
   "home": {
-    "login": "'É recomendado que você faça login antes de continuar:'"
+    "login": "É recomendado que você faça login antes de continuar:"
+  },
+  "buttons": {
+    "googleLogin": "Login com Google",
+    "anonLogin": "Continuar sem fazer login"
   }
 }

@@ -1,16 +1,19 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <div class="flex flex-col h-full w-full bg-color2">
+  <n-layout class="layout flex flex-col">
+    <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
       </transition>
-    </div>
-  </router-view>
+    </router-view>
+  </n-layout>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
+.layout {
+  height: 100vh;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.4s ease-in-out;

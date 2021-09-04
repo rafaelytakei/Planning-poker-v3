@@ -1,11 +1,24 @@
 import { promiseTimeout } from '@vueuse/core'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
+import to from 'await-to-js'
+import {
+  signInWithPopup,
+  getAuth,
+  GoogleAuthProvider,
+  User,
+  onAuthStateChanged,
+} from 'firebase/auth'
+// import '~/composables/firebase'
+
+const auth = getAuth()
+
 export const useAuthStore = defineStore('auth', {
   state: () => {
     return {
       token: '',
       loading: false,
+      user: undefined as undefined | User,
     }
   },
   getters: {
@@ -33,6 +46,28 @@ export const useAuthStore = defineStore('auth', {
      */
     logout() {
       this.token = ''
+    },
+    async googleLogin() {
+      const provider = new GoogleAuthProvider()
+      const [err, res] = await to(signInWithPopup(auth, provider))
+      if (err) {
+        console.error(err)
+        return
+      }
+      this.user = res?.user
+      console.log(this.user)
+    },
+    async updateUser() {
+      this.user = await new Promise((resolve, reject) => {
+        const unsubscribe = onAuthStateChanged(
+          auth,
+          (u) => {
+            unsubscribe()
+            resolve(u as any)
+          },
+          reject
+        )
+      })
     },
   },
 })

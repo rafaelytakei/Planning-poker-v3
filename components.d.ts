@@ -5,12 +5,20 @@
 declare module 'vue' {
   export interface GlobalComponents {
     HelloWorld: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/HelloWorld.vue')['default']
+    IMdiGoogle: typeof import('~icons/mdi/google')['default']
     Index: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/Logo/Index.vue')['default']
+    LightSwitch: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/LightSwitch.vue')['default']
     Logo: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/Logo/Index.vue')['default']
     LogoText: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/Logo/Text.vue')['default']
     Lottie: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/Lottie.vue')['default']
     LottieWrapper: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/LottieWrapper.vue')['default']
     MainLogo: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/MainLogo.vue')['default']
+    MyButton: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/MyButton.vue')['default']
+    NButton: typeof import('naive-ui')['NButton']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NLayout: typeof import('naive-ui')['NLayout']
+    NSpace: typeof import('naive-ui')['NSpace']
+    NSwitch: typeof import('naive-ui')['NSwitch']
     Text: typeof import('C:/Users/Administrator/Documents/Projects/Personal/Planning-poker-v3/src/components/Logo/Text.vue')['default']
   }
 }

@@ -1,9 +1,11 @@
 <template>
-  <div class="w-screen h-screen">
+  <n-config-provider :theme="darkTheme">
     <router-view />
-  </div>
+  </n-config-provider>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { darkTheme } from 'naive-ui'
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
