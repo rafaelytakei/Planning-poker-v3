@@ -1,5 +1,6 @@
 <template>
-  <n-layout class="layout flex flex-col">
+  <n-layout class="layout flex flex-col" has-sider>
+    <menu-left />
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
@@ -13,6 +14,7 @@
 <style scoped>
 .layout {
   height: 100vh;
+  padding-left: 64px;
 }
 .fade-enter-active,
 .fade-leave-active {
