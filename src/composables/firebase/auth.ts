@@ -80,3 +80,14 @@ export const setUserDisplayName = async (newName: string) => {
     return
   }
 }
+
+export const getCustomDecks = async () => {
+  const userDecksRef = dbRef(db, `users/${currentUser.value.uid}/customDecks`)
+  const [err, snapshot] = await to(get(userDecksRef))
+  if (err) {
+    console.error(err)
+    return []
+  }
+  if (!snapshot?.exists()) return []
+  return Object.values(snapshot.val())
+}

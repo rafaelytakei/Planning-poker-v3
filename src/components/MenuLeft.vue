@@ -7,6 +7,7 @@
     @mouseover="collapsed = false"
     @mouseout="collapsed = true"
     position="absolute"
+    class="z-10"
   >
     <n-menu
       :collapsed="collapsed"
